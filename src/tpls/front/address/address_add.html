@@ -1,0 +1,103 @@
+<style type="text/css">
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  bordear: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn-success {
+  color: #ffffff;
+  background-color: #FBB900;
+  border-color: #4cae4c;
+  width: 93%;
+}
+.form-control {
+  display: block;
+  width: 99%;
+  height: 34px;
+  /*padding: 6px 12px;*/
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.form-control::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #999999;
+}
+.form-control::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.form-group {
+  margin-top: 15px;
+  padding: 10px;
+}
+
+</style>
+<div ng-controller="addressAddCtrl">
+  
+  <div class="modh_title">
+    <a class="modh_return" href="#/address"><span class="modhr_img"></span></a><label>新增地址</label>
+  </div>
+
+  <div>
+
+    <div class="form-group">
+      <label>姓名:</label>
+      <input class="form-control" type="text" ng-model="name"/>
+    </div>  
+
+    <div class="form-group">
+      <label>电话:</label>
+      <input class="form-control" type="text" maxlength="11" ng-model="phone"/>
+    </div>  
+
+    <div class="form-group">
+      <label>地址:</label>
+      <input class="form-control" type="text" ng-model="address"/>
+    </div>
+
+    <div class="form-group">
+      <a class="btn btn-success" href="javascript:;" ng-click="newAddress($event)">保存</a>
+    </div>
+    
+  </div>
+
+</div>
+

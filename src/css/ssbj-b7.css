@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+/*常见问题and下单须知*/
+body{
+	background: white !important;
+}
+.title{
+	width: 100%;
+}
+.cont{
+	max-width: 640px;
+	margin: 0 auto;
+	background: white;
+}
+.p1{
+	font-weight: bold;
+	font-size: 16px;
+	padding-left: 10px;
+}
+p{
+	color: #92979b;
+	padding: 5px 0px;
+	padding-left: 35px;
+	padding-right: 10px;
+}
+.c_blue{
+	color: #e2af6c;
+}
+.c_white{
+	color: white;
+}
+.c_green{
+	color: #75e2ca;
+}
+.footer{
+	width: 100%;
+}

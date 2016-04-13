@@ -1,0 +1,74 @@
+.shaixuan_box {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background-color:rgba(255,255,255,0.95);
+	height: 100%;
+	width: 100%;
+	z-index: 9999;
+	display: none;
+	margin-right: -100%;
+	overflow: auto;
+	min-height: 100%;
+}
+.shaixuan_mall {
+	padding: 10px;
+}
+.shaixuan_mall h1 {
+	font-size: 16px;
+	font-weight: normal;
+	color: #00bb9c;
+	text-align: center;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #F2F2F2;
+	line-height: 40px;
+	width: 100%;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	background-color: #EEEEEE;
+}
+.shaixun_item {
+	float: left;
+	width: 100%;
+	padding-top: 30px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #F2F2F2;
+}
+.shaixun_item  a {
+	font-size: 14px;
+	color: #666666;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	float: left;
+	margin-bottom: 5%;
+	width: 25%;
+}
+.shaixun_item     a:active,.shaixun_item  a:hover {
+	color: #ff8200;
+	font-weight: bold;
+	font-size: 14px;
+}
+.shaixun_item  a.current {
+	color: #ff8200;
+	font-weight: bold;
+	font-size: 14px;
+}
+.shaixuan_mall p {
+	line-height: 40px;
+	width: 100%;
+	text-align: center;
+}
+.shaixuan_colos {
+	color: #666666;
+	text-decoration: none;
+	display: block;
+	float: left;
+	background-color: #F6F6F6;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+}

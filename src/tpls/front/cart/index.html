@@ -1,0 +1,49 @@
+<!-- <div class="mod_hd">
+  <div class="mprod_tit">
+    <span class="mprod_tit_text">购物车</span>
+  </div>
+</div> -->
+<div class="address_tab" style="margin-bottom:-35px;">
+  <label>购物车</label>
+</div>
+
+<div style="margin-top:33px;" ng-controller="cartCtrl" >
+
+  <div class="car_wrap" ng-init="init_car($event)" style="margin-bottom:130px;">
+
+    <ul id="j-list" ng-repeat="product in product_array">
+      <li>
+        <span class='goods fl'>
+          <img src="http://www.ysbiaoju.com/cgi-bin/download.pl?fid={{product.product_image}}"></span>
+        <div class='describe'>
+          <label class='up'>{{product.product_name}}</label>
+          <label class='down'>单价:{{product.discount_price  | number:2 }}</label>
+          <a class='fl reduce' ng-click="product_update($event,product.product_id,'reduce')"></a>
+          <span  class='count fl'>{{product.count}}</span>
+          <a class='fl add' ng-click="product_update($event,product.product_id,'add')"></a>
+        </div>
+        <div class='right fr'>
+          <span>
+            ¥ <em class='price'>{{product.count*product.discount_price | number:2}}</em>
+          </span>
+          <a id='recover' ng-click="product_update($event,product.product_id,'delete')"></a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="car_foot">
+    <span class="total " style="background: #D1D1D1;color: #000000;">
+      &nbsp;&nbsp;待支付&nbsp;
+      <label id="j-total" style="color: red;">¥{{totalCart()|number:2}}</label>
+    </span>
+    <span id="btn">
+      <a class="car_okbtn" href="javascript:void(0)" ng-click="order_review()" style="background: red;">确认支付</a>
+    </span>
+  </div>
+
+  <!-- 页脚导航-->
+  <div ng-include src="'front/footer/footer.html'"></div>
+
+</div>

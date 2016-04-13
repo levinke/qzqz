@@ -1,0 +1,59 @@
+<script type="text/javascript">
+  //百度地图API功能
+  function myFun(result){
+    var cityName = result.name;
+    document.getElementById("j-l-city").innerHTML = "当前城市："+cityName;
+    //alert("当前定位城市:"+cityName);
+  }
+  var myCity = new BMap.LocalCity();
+  myCity.get(myFun);
+</script>
+<div class="address_tab">
+    <a class="modh_return" href="#/">
+      <span class="modhr_img"></span>
+    </a>
+  <!-- 首页城市名称 start -->
+  <label>当前城市</label>
+  <!-- 首页城市名称 end -->
+</div>
+<div class="wrap_city">
+  <div class="wcity_local">
+    <dt id="j-l-city" class="wcityl_title">当前城市：定位中...</dt>
+  </div>
+  <div class="wcity_list" ng-controller="positionCtrl">
+    <volist name="list" id="vo" key="k" >
+      <dt class="wcityl_title">城市列表：</dt>
+      <volist name="vo['1']" id="vochild" key="kchild" >
+        <dd>
+          <a class="wcityl_text"  href="#/" >
+            {{position}}<em class="row-right"></em>
+          </a>
+        </dd>
+      </volist>
+    </volist>
+  </div>
+  <div class="wcity_tip">
+    <p>以上如果没有您所在的城市或地区，很抱歉暂时未开通！</p>
+  </div>
+</div>
+
+<div class="serve"style="top: 180px;height: 300px;" >
+			<span class="serverTitle">
+				&nbsp;服务区域
+			</span>
+			<span class="serverTitle" style="background: #FFFFFF;">
+				&nbsp;福州3环范围内
+			</span>
+			<img src="../img/bg_ditu@2x.png"style="width: 100%;height: 230px;margin: 0;"/>
+</div>
+
+<div class="serve" style="top: 510px;height: 170px;">
+			<img src="../img/icon_fuwubaozhang@2x.png" style="margin: 20px 0 0 30px;width: 24px;height: 24px;"/>
+			<span style="margin-top: 20px;position: absolute;font-size: 18px;font-weight: bold;">
+				服务保障
+			</span>
+			<br />
+			<span style="font-family: arial; position: absolute;top: 70px;left: 5px;color: #A4AAB3;right: 8px; font-size: 13px;">
+				如果您对商家服务不满意，你可通过联系客服选择要求重新免费服务或要求退款；我们会在24小时内响应，48小时内免费重新上门服务。
+			</span>
+</div>

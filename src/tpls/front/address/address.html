@@ -1,0 +1,35 @@
+<div ng-controller="addressCtrl">
+
+    <div class="mod_hd">
+      <div class="modh_title">
+        <a class="modh_return" href="#/userCenter">
+          <span class="modhr_img"></span>
+        </a>
+        <label>常用地址</label>
+      </div>
+
+    </div>
+
+    <div class="addr_wrap" ng-init="initData()" style="margin-bottom:50px;">
+      <ul>
+        <div ng-repeat="address in address_array"> 
+          <li >
+            <a href="#/address_update" style="display:block">
+              <label id="name" style="width: 160px;">姓名:{{address.name}}</label>
+              <label id="tel">电话:{{address.phone}}</label>
+              <br>
+              <label id="city" style="margin-top:10px;">地址:</label> 
+              <label style="margin-top:10px;">{{address.address | ToALine}}</label>
+              <em class="row-right2"></em>
+            </a>
+          </li>
+        </div> 
+      </ul>
+    </div>
+
+
+  <a class="addr_foot" href="#/address_add"> 
+      <img alt="add" src="../img/add.png">
+      添加地址
+    </a>
+</div>

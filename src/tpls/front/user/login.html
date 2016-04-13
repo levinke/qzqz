@@ -1,0 +1,29 @@
+<!-- <div class="modh_title">
+  <a class="modh_return" href="#/login">
+    <span class="modhr_img"></span>
+  </a>
+  <label>登陆</label>
+</div> -->
+<div ng-controller="login">
+  <div class="login_title"><span>会员登录</span></div>
+  <div class="login_top"></div>
+  <form method="post">
+      <div class="ptext">
+        <span class="icon user"></span>
+        <input ng-model="login_name" type="text" name="name"  id="name" required="required" required-msg="请输入手机号码" data-type="phone" maxlength="11" placeholder="请输入手机号码">
+      </div>
+
+      <div class="ptext">
+        <span class="icon pass"></span>
+        <input ng-model="login_passwd" type="password"  name="password" id="pass" required="required" required-msg="请输入密码" data-type="phone" maxlength="32" placeholder="请输入密码">
+      </div>
+     
+      <div class="login-btn">
+      	<a href="#/" style="color: #FBB900;position: absolute;top: 0%;text-decoration: none;" >首页</a>
+        <a class="lg_btn_sub" ng-click="loginValidate($event)" >登录</a>
+        <a id="password" ng-click="forget_goto($event)"style="color: #FBB900;position: absolute;bottom: 0px;">忘记密码?</a>
+        <a id="register" ng-click="register_goto($event)" style="color: #FBB900;position: absolute;bottom: 0px;right: 10px;">注册账号</a>
+        <!-- 请联系客服!0591-38266606 -->
+      </div>
+  </form>
+</div>

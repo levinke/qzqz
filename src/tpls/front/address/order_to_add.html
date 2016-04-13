@@ -1,0 +1,36 @@
+  <link rel="stylesheet" href="../css/amazeui.min.css"/>
+
+  <div ng-controller="addressUpdateCtrl">
+
+    <div class="modh_title">
+      <a class="modh_return" href="#/address"><span class="modhr_img"></span></a><label>地址修改</label>
+    </div>
+
+    <form class="am-form" ng-init="initData()">
+      <div class="am-g">
+        <div class="am-panel am-panel-default">
+          <div class="am-panel-bd" >
+            
+            <div ng-repeat="address in address_array">
+              <div id="{{address.address_id}}">
+                <td align='right' >名字&nbsp;:&nbsp;</td>
+                <td><input type="text" class='name' value="{{address.name}}" /></td>
+                <td align='right' >电话&nbsp;:&nbsp;</td>
+                <td><input type="text" class='phone' maxlength="11" value="{{address.phone}}" /></td>
+                <td align='right' >地址&nbsp;:&nbsp;</td>
+                <td><input type="text" class='address' value="{{address.address}}" /></td> 
+                <div class="am-form-group">
+                  <a href="javascript:;" class="am-btn am-btn-primary am-btn-xs" ng-click="address_update($event,address.address_id,'update')">修改</a>
+                  <a href="javascript:;" class="am-btn am-btn-primary am-btn-xs" ng-click="address_update($event,address.address_id,'delete')">删除</a>
+                  <a href="javascript:;" class="am-btn am-btn-primary am-btn-xs" ng-click="address_update($event,address.address_id,'default')">设置默认地址!</a>
+                </div> 
+              </div> 
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </form>
+
+  </div>

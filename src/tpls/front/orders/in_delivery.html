@@ -1,0 +1,79 @@
+<div class="mod_hd">
+  <div class="modh_title">
+    <a class="modh_return" href="#/userCenter">
+      <span class="modhr_img"></span>
+    </a>
+    <label>订单详情</label>
+  </div>
+</div>
+<div ng-controller="orderList" ng-init="initData()">
+  <div class="order_head">
+    <ul>
+      <li>
+        <a href="javascript:;" >待配送</a>
+      </li>
+      <li>
+        <a href="javascript:;" >配送中</a>
+      </li>
+      <li>
+        <a href="javascript:;" >已完成</a>
+      </li>
+    </ul>
+  </div>
+  <div class="order_list">
+    <ul ng-repeat="order in orders">
+        <li>
+
+          <div class="order_top" style="padding:5px;">
+            <span class="order_id"><b>订单号:&nbsp;</b>{{order._id}}</span>
+          </div>
+
+          <div class="order_top" style="padding:5px;">
+            <span class="order_htime"><b>时&nbsp;&nbsp;&nbsp;&nbsp;间:&nbsp;</b>{{order.et | unixToLocal}}</span>
+          </div>  
+
+          <div class="order_top" style="padding:5px;">
+            <span class="order_htime"><b>支付方式:&nbsp;</b> <span style="color:#CC0033;">{{order.pay_type | payType}}</span></span>
+          </div>
+
+          <div class="order_top" style="padding:5px;">
+            <span class="order_htime"><b>商品详情:&nbsp;</b></span>
+          </div>
+          <div style="padding:5px;">
+            <div ng-repeat="product in order.products" style="clear:both;">              
+              <span class="order_htime"><span style="float:left;">{{product.product_name}}</span> <span style="float:right;">{{product.count}}份</span> </span>
+            </div>
+          </div>
+          
+          <div class="order_center" style="border-top: 1px dotted #e6e6e6;padding:5px;clear:both;">
+
+            <span class="order_name" style="width: 180px;">收货人:{{order.name}}</span>
+            <span class="order_tel" style="width: 120px;">手&nbsp;&nbsp;&nbsp;&nbsp;机:{{order.phone}}</span>
+          </div>
+
+          <p class="order_address" style="padding:5px;">地&nbsp;&nbsp;&nbsp;&nbsp;址:{{order.address}}</p>
+
+          <div class="order_bottom" style="padding-left:5px;">
+            <span class="order_text">
+              总&nbsp;&nbsp;&nbsp;&nbsp;价：
+              <span class="order_price">¥{{order.amount | number:2}}</span>
+            </span>
+            <span class="fr" ng-if="order.delivery =='trans'">
+              <a class="order_qrbtn" ng-click="orderConfirm(order._id)">确认收货</a>
+            </span>
+             <span class="fr" ng-if="order.delivery =='wait' && order.status=='un_pay'">
+              <a class="order_qrbtn" ng-click="orderDelete(order._id)">取消订单</a>
+            </span>
+            <span class="fr" ng-if="order.delivery =='wait' && order.status=='un_pay' " style="margin-right:5px;">
+              <a class="order_qrbtn" ng-click="goToPay(order._id)">去付款</a>
+            </span>
+            <span class="fr" ng-if="order.status=='finish_pay' ">
+              <a class="" style="color:#CC0033;margin-right:5px;">已付款</a>
+            </span>
+          </div>
+
+        </li>
+    </ul>
+    <div id="more" ng-click="getoNextPage(pageNum)" style="background-color:#ffffff;text-align:center;padding:10px 0px 10px 0px;margin-bottom:10px;">加载更多……</div>
+  </div>
+</div>

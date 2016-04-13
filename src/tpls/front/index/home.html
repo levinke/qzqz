@@ -1,0 +1,192 @@
+
+<div class="address_tab" ng-controller="positionCtrl">
+<!-- 首页城市名称 start --> 
+    <script type="text/javascript">
+        // 百度地图API功能
+      // function myFun(result){
+      //   var cityName = result.name;
+      //   $("#cityName").text(cityName);
+      //   //alert("当前定位城市:"+cityName);
+      // }
+      // var myCity = new BMap.LocalCity();
+      // myCity.get(myFun);
+
+    </script>
+  <a class="cityName" href="#/position"><span id="cityName" >{{position}}</span><em class="arrow-left"></em></a>
+  <label>亲子商店</label>
+  <div class="header_right shaixuan" style="float: right;margin-right: 10px;"><img src="../img/iconfont-shaixuan.png" style="width: 30px;height: 30px;" ng-click="shaixuan()"></div>
+<!-- 首页城市名称 end -->
+</div>
+
+<!--banner button -->
+<div id="warp" style="max-width:640px;margin:0 auto;" ng-controller="homeCtrl">
+	
+  <div ng-init="init()">
+  <!--页面加载 开始-->
+  <div id="preloader">
+    <div id="status">
+      <p class="center-text"><span>拼命加载中···</span></p>
+    </div>
+  </div>
+  <!--页面加载 结束--> 
+  
+  <!--筛选-->
+  <div class="shaixuan_box">
+	<div class="shaixuan_mall">
+    	<h1>商品筛选</h1>
+        <div class="shaixun_item">
+            <a href="" class="current">全部商品</a>
+            <a href="#/goods/water/bottlbd">服装</a>
+            <a href="#/goods/water/tappet">玩具</a>
+            <a href="#/goods/water/medicines">读物</a>
+            <a href="#/goods/water/other">影视</a>
+            <a href="#/goods/water/photo">摄影</a>
+            <a href="#/goods/water/mianbao">辅食</a>
+            <a href="#/goods/water/xueju">学具</a>
+            <a href="#/goods/water/ruanjian">软件</a>
+            <a href="#/goods/water/shougong">手工</a>
+            <a href="#/goods/water/magic">魔术</a>
+    	</div>
+    	<h1>推荐</h1>
+    	<div class="shaixun_item">
+            <a href="" class="current">全部推荐</a>
+            <a href="#/introduce">每日推荐</a>
+    	</div>
+    	<h1>游戏</h1>
+    	<div class="shaixun_item">
+            <a href="" class="current">全部游戏</a>
+            <a href="http://114.215.241.76/vinke/index_birthday/index.html">生日祝福</a>
+            <a href="http://114.215.241.76/vinke/dafengshou_index/index.html">翻翻看</a>
+            <a href="http://114.215.241.76/vinke/birds/index.html">birds</a>
+    	</div>
+    	<h1>活动</h1>
+    	<div class="shaixun_item">
+            <a href="" class="current">全部活动</a>
+            <a href="#/activity">亲子活动</a>
+    	</div>
+        <div class="shaixun_item">
+            <a href="" class="current">全部须知</a>
+            <a href="#/position">服务范围</a>
+            <a href="#/eq">常见问题</a>
+            <a href="#/order_eq">下单须知</a>
+        </div>
+        <p><a href="" class="shaixuan_colos" ng-click="shaixuanclose()">关闭</a></p>
+    </div>
+  </div>
+ 
+</div>
+  <div class="banner">
+  	<!-- 图片轮播开始 -->
+    <section id="slider" class="swipe" style="visibility: visible;">
+      <div class="swipe-wrap" style="width: 2560px;">
+              
+          <div class="wrap goods_img" data-index="0" style="width: 640px; left: 0px; transition-duration: 300ms; -webkit-transition-duration: 300ms; -webkit-transform: translate(-640px, 0px) translateZ(0px);">
+                <a href="javascript:;"><img width="100%" src="../img/index_g1.JPG"></a>
+          </div>
+          
+          <div class="wrap goods_img" data-index="0" style="width: 640px; left: 0px; transition-duration: 300ms; -webkit-transition-duration: 300ms; -webkit-transform: translate(-640px, 0px) translateZ(0px);">
+                <a href="javascript:;"><img width="100%" src="../img/index_g2.JPG"></a>
+          </div>
+          
+          <div class="wrap goods_img" data-index="0" style="width: 640px; left: 0px; transition-duration: 300ms; -webkit-transition-duration: 300ms; -webkit-transform: translate(-640px, 0px) translateZ(0px);">
+                <a href="javascript:;"><img width="100%" src="../img/index_g1.JPG"></a>
+          </div>
+          
+          <div class="wrap goods_img" data-index="0" style="width: 640px; left: 0px; transition-duration: 300ms; -webkit-transition-duration: 300ms; -webkit-transform: translate(-640px, 0px) translateZ(0px);">
+                <a href="javascript:;"><img width="100%" src="../img/index_g2.JPG"></a>
+          </div>
+                
+      </div>
+
+      <div class="bgboxgo">
+        <div class="botton-box" id="sbsd">
+          <span class="off"></span>
+          <span class="on"></span>
+        </div>
+      </div>
+
+    </section>
+  	<!-- 图片轮播结束 -->
+  </div>
+  <!--导航按钮-->
+  <div class="menu-con">
+     <a href="#/goods/water/bottlbd">
+     
+        <img src="../img/nav_b1.png">
+        <span class="nav_text">服装</span>   
+     </a>
+     <a href="#/goods/water/tappet">
+        <img src="../img/nav_b2.png">
+        <span class="nav_text">玩具</span>
+     </a>
+  </div>
+  <div class="menu-con" style="border: none;border-top: 1px solid #DDDDDD;">
+     <a href="#/goods/water/medicines">
+        <img src="../img/medicines.png">
+        <span class="nav_text">读物</span>   
+     </a>
+     <a href="#/goods/water/other">
+        <img src="../img/draw.png">
+        <span class="nav_text">影视</span>
+     </a>
+  </div>
+  <div class="menu-con" style="border: none;border-top: 1px solid #DDDDDD;">
+     <a href="#/goods/water/photo">
+        <img src="../img/photo.png">
+        <span class="nav_text">摄影</span>   
+     </a>
+     <a href="#/goods/water/mianbao">
+        <img src="../img/mianbao.png">
+        <span class="nav_text">辅食</span>
+     </a>
+  </div>
+  <div class="menu-con" style="border: none;border-top: 1px solid #DDDDDD;">
+     <a href="#/goods/water/xueju">
+        <img src="../img/xueju.png">
+        <span class="nav_text">学具</span>   
+     </a>
+     <a href="#/goods/water/ruanjian">
+        <img src="../img/ruanjian.png">
+        <span class="nav_text">软件</span>
+     </a>
+  </div>
+  <div class="menu-con" style="border: none;border-top: 1px solid #DDDDDD;">
+     <a href="#/goods/water/shougong">
+        <img src="../img/shougong.png">
+        <span class="nav_text">手工</span>   
+     </a>
+     <a href="#/goods/water/magic">
+        <img src="../img/magic.png">
+        <span class="nav_text">魔术</span>
+     </a>
+  </div>
+  <div class="borderCJY1"></div>
+  <div class="menu-con-list">
+    <a href="#/introduce">
+       <img src="../img/icon_woyaozhuanq@2x.png"><span class="nav_text2">每日推荐</span>
+    </a>
+    <a href="http://114.215.241.76/vinke/index_birthday/index.html">
+       <img src="../img/icon_wodegongy@2x.png"><span class="nav_text2">互动游戏</span>
+    </a>
+    <a href="#/activity">
+       <img src="../img/icon_weidany@2x.png"><span class="nav_text2">亲子活动</span>
+    </a> 
+  </div>
+  <div class="s-space"></div>
+  <div class="menu-other-list">
+    <a href="#/eq"><img alt="常见问题" src="../img/nav_b7.png"><span>常见问题</span></a>
+    <a href="#/order_eq"><img alt="下单须知" src="../img/nav_b8.png"><span>下单须知</span></a>
+  </div>
+  <div class="space-split110"></div> 
+  <!--导航按钮结束-->
+</div>
+
+<!-- 页脚导航-->
+<div ng-include src="'front/footer/footer.html'"></div>0
+
+<script type="text/javascript">
+$(function() {
+    slider(3000);//参数为自动切换描述
+});
+</script>
+

@@ -1,0 +1,171 @@
+
+<div ng-controller="goods_control">
+
+<!--   <div class="mod_hd">
+    <div class="mprod_tit"><span class="mprod_tit_text" ng-model="title">{{title}}</span></div>    
+  </div> -->
+<div class="address_tab" style="margin-bottom:-35px;">
+    <a class="modh_return" href="#/">
+      <span class="modhr_img"></span>
+    </a>
+  <label ng-model="title">{{title}}</label>  
+  <em><a ng-click="ref_data($event);" href="" style="position: absolute;float: right;right: 10px;top: -3px;"><img src="../img/iconfont-shuaxin.png" style="width: 20px;"></a></em>
+</div>
+  <!-- 桶装水列表 -->
+  <div class="mod_bd"  ng-init="init_data($event)" style="margin-bottom:100px;">
+	<div class="mprod_t_space"></div>
+    <div class="mprod_list clearfix baoliao_list">
+        
+        <input id="tab1" type="radio" name="tabs" style="display: none;" checked>
+		<label for="tab1">最新爆料</label>
+
+		<input id="tab2" type="radio" name="tabs" style="display: none;">
+		<label for="tab2">优质爆料</label>
+		
+		<input id="tab3" type="radio" name="tabs" style="display: none;">
+		<label for="tab3">热门排行</label>
+		
+		<input id="tab4" type="radio" name="tabs" style="display: none;">
+		<label for="tab4">白菜汇</label>
+        
+        <!--angular foreach -->
+        <section id="content1">
+        <div ng-repeat="product in product_array">
+          
+         <!--  <div ng-if= '$index%2==0'>
+            <div class='mprod_ul'>
+          </div> -->
+
+            <div class="mprod_ul_li" id="{{product._id}}" style="border-bottom:solid 1px #f2f2f2;">
+
+              <div class="prod_label">
+                  <img id="img_addr" src="http://www.ysbiaoju.com/cgi-bin/download.pl?fid={{product.product_image}}">
+                  <span id="title" class="prod_tit">{{product.product_name}}</span>
+              </div>
+
+              <span class="prod_yprice">￥<span id="yprice">{{product.price}}</span></span>
+              <span class="prod_count f_r">{{product.purchase_count}}人已购买</span><br>
+              <span class="prod_sprice">￥<span id="sprice">{{product.discount_price}}</span><span id="sprice" ng-click="toDetail(product)">&nbsp;&nbsp;&nbsp;商品详情</span></span>
+              <a id="j-p{$v.id}" class="prod_car f_r" ng-click="tocar($event,product._id,
+              product.product_name,product.product_image,product.price,product.discount_price)">+ 购 物 车<span id="count{{product._id}}"></span> </a>
+              
+            </div>
+
+           <!--  <div ng-if= '$index%2==1'>
+              </div>
+            </div>
+
+            <div ng-if= '$index+1==product_array.length'>
+              </div>
+
+            </div> -->
+
+        </div>
+		</section>
+		<section id="content2">
+        <div ng-repeat="product in (product_array | filter:recommend | orderBy:'purchase_count')">
+          
+         <!--  <div ng-if= '$index%2==0'>
+            <div class='mprod_ul'>
+          </div> -->
+
+            <div class="mprod_ul_li" id="{{product._id}}" style="border-bottom:solid 1px #f2f2f2;">
+
+              <div class="prod_label">
+                  <img id="img_addr" src="http://www.ysbiaoju.com/cgi-bin/download.pl?fid={{product.product_image}}">
+                  <span id="title" class="prod_tit">{{product.product_name}}</span>
+              </div>
+
+              <span class="prod_yprice">￥<span id="yprice">{{product.price}}</span></span>
+              <span class="prod_count f_r">{{product.purchase_count}}人已购买</span><br>
+              <span class="prod_sprice">￥<span id="sprice">{{product.discount_price}}</span></span>
+              <a id="j-p{$v.id}" class="prod_car f_r" ng-click="tocar($event,product._id,
+              product.product_name,product.product_image,product.price,product.discount_price)">+ 购 物 车<span id="count{{product._id}}">...</span> </a>
+              
+            </div>
+
+           <!--  <div ng-if= '$index%2==1'>
+              </div>
+            </div>
+
+            <div ng-if= '$index+1==product_array.length'>
+              </div>
+
+            </div> -->
+
+        </div>
+		</section>
+		<section id="content3">
+        <div ng-repeat="product in (product_array | orderBy:'-purchase_count' | limitTo: 100)">
+          
+         <!--  <div ng-if= '$index%2==0'>
+            <div class='mprod_ul'>
+          </div> -->
+
+            <div class="mprod_ul_li" id="{{product._id}}" style="border-bottom:solid 1px #f2f2f2;">
+
+              <div class="prod_label">
+                  <img id="img_addr" src="http://www.ysbiaoju.com/cgi-bin/download.pl?fid={{product.product_image}}">
+                  <span id="title" class="prod_tit">{{product.product_name}}</span>
+              </div>
+
+              <span class="prod_yprice">￥<span id="yprice">{{product.price}}</span></span>
+              <span class="prod_count f_r">{{product.purchase_count}}人已购买</span><br>
+              <span class="prod_sprice">￥<span id="sprice">{{product.discount_price}}</span></span>
+              <a id="j-p{$v.id}" class="prod_car f_r" ng-click="tocar($event,product._id,
+              product.product_name,product.product_image,product.price,product.discount_price)">+ 购 物 车<span id="count{{product._id}}">...</span> </a>
+              
+            </div>
+
+           <!--  <div ng-if= '$index%2==1'>
+              </div>
+            </div>
+
+            <div ng-if= '$index+1==product_array.length'>
+              </div>
+
+            </div> -->
+
+        </div>
+		</section>
+		<section id="content4">
+        <div ng-repeat="product in (product_array | orderBy:'discount_price')">
+          
+         <!--  <div ng-if= '$index%2==0'>
+            <div class='mprod_ul'>
+          </div> -->
+
+            <div class="mprod_ul_li" id="{{product._id}}" style="border-bottom:solid 1px #f2f2f2;">
+
+              <div class="prod_label">
+                  <img id="img_addr" src="http://www.ysbiaoju.com/cgi-bin/download.pl?fid={{product.product_image}}">
+                  <span id="title" class="prod_tit">{{product.product_name}}</span>
+              </div>
+
+              <span class="prod_yprice">￥<span id="yprice">{{product.price}}</span></span>
+              <span class="prod_count f_r">{{product.purchase_count}}人已购买</span><br>
+              <span class="prod_sprice">￥<span id="sprice">{{product.discount_price}}</span></span>
+              <a id="j-p{$v.id}" class="prod_car f_r" ng-click="tocar($event,product._id,
+              product.product_name,product.product_image,product.price,product.discount_price)">+ 购 物 车<span id="count{{product._id}}">...</span> </a>
+              
+            </div>
+
+           <!--  <div ng-if= '$index%2==1'>
+              </div>
+            </div>
+
+            <div ng-if= '$index+1==product_array.length'>
+              </div>
+
+            </div> -->
+
+        </div>
+		</section>
+        <!-- 列表 end-->
+    </div>
+    
+    <div class="baoliao_more" ng-click="load_data($event);">加载更多</div>
+  </div>
+</div>
+<!-- 页脚导航-->
+<div ng-include src="'front/footer/footer.html'"></div>

@@ -1,0 +1,38 @@
+<div class="modh_title">
+  <a class="modh_return" href="#/userCenter">
+    <span class="modhr_img"></span>
+  </a>
+  <label>修改密码</label>
+</div>
+<div class="reg_wrap" ng-controller="changePassword">
+  <form method="post">
+    <table>
+       <tr>
+        <td colspan="2">
+          <input id="j-old-pass" ng-model="loginOldPwd" class="reg_in pass" name="pass" type="password" maxlength="18" placeholder="&nbsp;请输入旧密码"></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input id="j-pass" ng-model="loginNewPwd" class="reg_in pass" name="pass" type="password" maxlength="18" placeholder="&nbsp;请输入英文开头至少7位新密码"></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input id="j-pass2" ng-model="loginNewPwd2" class="reg_in pass" name="pass2" type="password" maxlength="18" placeholder="&nbsp;请重复输入密码"></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input id="j-submit" ng-click="changePwdValidate($event)" class="reg_in submit" type="button" value="确认修改" style="background-color:#FBB900;"></td>
+      </tr>
+    </form>
+    <!-- <tr>
+      <td>
+        <input id="j-check" type="checkbox" checked="checked" value="1">
+        <label for="j-check">我已同意</label>
+        <a href="#" style="color: #27a7f1;text-decoration: underline;">用户协议</a>
+      </td>
+      <td style="text-align: right;">
+        <a href="#/login" style="color: #27a7f1;text-decoration: underline;">立即登录</a>
+      </td>
+    </tr> -->
+  </table>
+</div>

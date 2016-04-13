@@ -1,0 +1,43 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 verbose node symlink D:\Program Files\nodejs\\node.exe
+5 warn package.json angularjs-intern-example@0.1.0 No repository field.
+6 warn package.json angularjs-intern-example@0.1.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose install where, deps [ 'F:\\intern\\angularjs-example-chrome', [ 'intern' ] ]
+9 info preinstall angularjs-intern-example@0.1.0
+10 verbose readDependencies using package.json deps
+11 verbose already installed skipping intern@~2.2.2 F:\intern\angularjs-example-chrome
+12 silly resolved []
+13 info build F:\intern\angularjs-example-chrome
+14 verbose linkStuff [ false, false, false, 'F:\\intern' ]
+15 info linkStuff angularjs-intern-example@0.1.0
+16 verbose linkBins angularjs-intern-example@0.1.0
+17 verbose linkMans angularjs-intern-example@0.1.0
+18 verbose rebuildBundles angularjs-intern-example@0.1.0
+19 verbose rebuildBundles [ '.bin', 'intern' ]
+20 info install angularjs-intern-example@0.1.0
+21 info postinstall angularjs-intern-example@0.1.0
+22 verbose unsafe-perm in lifecycle true
+23 info angularjs-intern-example@0.1.0 Failed to exec postinstall script
+24 error angularjs-intern-example@0.1.0 postinstall: `bower install`
+24 error Exit status 1
+25 error Failed at the angularjs-intern-example@0.1.0 postinstall script.
+25 error This is most likely a problem with the angularjs-intern-example package,
+25 error not with npm itself.
+25 error Tell the author that this fails on your system:
+25 error     bower install
+25 error You can get their info via:
+25 error     npm owner ls angularjs-intern-example
+25 error There is likely additional logging output above.
+26 error System Windows_NT 6.1.7601
+27 error command "D:\\Program Files\\nodejs\\\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+28 error cwd F:\intern\angularjs-example-chrome
+29 error node -v v0.10.36
+30 error npm -v 1.4.28
+31 error code ELIFECYCLE
+32 verbose exit [ 1, true ]

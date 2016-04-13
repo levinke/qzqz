@@ -1,0 +1,31 @@
+<html>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5b4624c65303f733b19903ae7921d468";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+  <link href="../css/base.css" rel="stylesheet" type="text/css">
+  <link href="../css/ssbj-b7.css" rel="stylesheet" type="text/css">
+  <title>亲子商店</title>
+</head>
+<body>
+	<div id="warp" style="max-width:640px;margin:0 auto;" ng-controller="introduceCtrl">
+		<div ng-init="init()">
+		
+	  <img class="title" src="http://www.ysbiaoju.com/cgi-bin/download.pl?fid={{introduce_list.introduce_image}}">
+	  <div class="cont">
+	  	<label class="p1 c_blue">{{introduce_list.introduce_name}}</label>
+	  	<p>价格：{{introduce_list.count}}</p>
+	  	<p>介绍：{{introduce_list.introduce}}</p>
+	  </div>
+	  </div>
+	</div>
+</body>
+</html>

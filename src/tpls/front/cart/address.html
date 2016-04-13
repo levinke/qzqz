@@ -1,0 +1,49 @@
+<div ng-controller="orderAddressCtrl">
+
+    <div class="mod_hd">
+      <div class="modh_title">
+        <a class="modh_return" href="#/orderReview">
+          <span class="modhr_img"></span>
+        </a>
+        <label>常用地址</label>
+      </div>
+
+    </div>
+
+    <div class="addr_wrap" ng-init="initData()" style="margin-bottom:50px;">
+      <ul>
+        <div ng-repeat="address in address_array"> 
+        <!-- <li>
+            <a href="#/address_update" style="display:block">
+              <label id="name" style="width: 120px;">姓名:{{address.name}}</label>
+              <label id="tel">电话:{{address.phone}}</label>
+              <br>
+              <label id="city" style="margin-top:10px;">地址:</label> 
+              <label style="margin-top:10px;">{{address.address | ToALine}}</label>
+              <em class="row-right2"></em>
+            </a>
+          </li> -->
+          <li id="{{address.address_id}}"> 
+            <a href="javascript:;" ng-click="selectAddress($event,address.address_id)" style="display:block">
+
+             <!--  姓名:<label class="name" style="width: 120px;">{{address.name}}</label>
+              电话:<label class="phone" >{{address.phone}}</label>
+              <br>
+              地址:<label class="address">{{address.address}}</label> -->
+              姓名:<label class="name" id="name" style="width: 160px;">{{address.name}}</label>
+              电话:<label class="phone" id="tel">{{address.phone}}</label>
+              <br>
+              <label id="city" style="margin-top:10px;">地址:</label> 
+              <label class="address" style="margin-top:10px;" realAddress="{{address.address}}" >{{address.address | ToALine}}</label>
+            </a> 
+          </li>
+        </div> 
+      </ul>
+    </div> 
+
+    <a class="addr_foot" href="#/orderReview/address/add"> 
+      <img alt="add" src="../img/add.png">
+      添加地址
+    </a>
+
+</div>

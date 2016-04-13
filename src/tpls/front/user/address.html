@@ -1,0 +1,27 @@
+<div class="mod_hd">
+  <div class="modh_title">
+    <a class="modh_return" href="#/UserCenter">
+      <span class="modhr_img"></span>
+    </a>
+    <label>常用地址</label>
+  </div>
+</div>
+<div class="addr_wrap">
+  <ul>
+    <foreach name='addressmx' item='v'>
+      <li>
+        <a href="#/address/update" style="display:block">
+          <input type="hidden" name='id' value='{$v.id}'/>
+          <label id="name" style="width: 120px;">姓名:{$v.name}</label>
+          <label id="tel">电话:{$v.tel}</label>
+          <br>
+          <label id="city">地址:{$v.address}</label> <em class="row-right2"></em>
+        </a>
+      </li>
+    </foreach>
+  </ul>
+</div>
+<div class="addr_foot">
+  <img alt="add" src="../img/add.png">
+  <a href="#/address/add">添加地址</a>
+</div>

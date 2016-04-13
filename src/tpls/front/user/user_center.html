@@ -1,0 +1,70 @@
+<script type="text/javascript">
+// function phone(date){
+//   window.location.href = 'tel://' + date;
+// }
+</script>
+<div ng-controller="userCenterCtrl" ng-init="initData($event)">
+  <div class="bx_head">
+    <img class="logo" src="../img/bx1.jpg" >
+    <span class="info" style="color: #FFFFFF;">
+      <p id="username">{{login_name}}</p>
+      <label id="tip">货品到府,亲子到家</label>
+    </span>
+  </div>
+  <div class="bx_wrap_order">
+    <span>
+      <a class="dai" href="#/orders/search/wait">待配送</a>
+    </span>
+    <span>
+      <a class="pei" href="#/orders/search/trans">配送中</a>
+    </span>
+    <span>
+      <a class="yi" href="#/orders/search/finish">已完成</a>
+    </span>
+  </div>
+  <div class="b-split5"></div>
+  <div class="bx_wrap_cont">
+    <ul>
+      <li>
+        <a href="http://114.215.241.76/vinke/card/tpls/index.html?token=o14537731874827709197">
+          <img src="../img/coupon_pic.png">
+                           我的名片
+          <em class="row-right"></em>
+        </a>
+      </li>
+      <li class="bx_marg_tb bx_border_top">
+        <a href="#/address">
+          <img src="../img/bx-address.png">
+          常用地址
+          
+          <em class="row-right"></em>
+        </a>
+      </li>
+
+			<li class="bx_border_top">
+        <a href="" ng-click="share()">
+          <img src="../img/share_pic.png">
+          	分享
+          <em class="row-right"></em>
+        </a>
+      </li>
+      <li>
+        <a href="#/userCenter/changePassword">
+          <img src="../img/bx-setting.png">
+          	修改密码
+          <em class="row-right"></em>
+        </a>
+      </li>
+      <li>
+        <a class="kefu" href="javascript:phone('0591-83463552')">客服 0591-83463552</a>
+      </li>
+    </ul>
+      <div class="login-btn">
+        <a class="lg_btn_sub" ng-controller="logoutCtrl" ng-click="logout()">注销</a>
+      </div>
+  </div>
+  <div class="space-split110"></div>
+	<div class="share_img" id="mcover" style="display:none;" ng-click="shareHide()"><img src="../img/guide.png" /> </div>
+</div>
+<!-- 页脚导航-->
+<ng-include src="'front/footer/footer.html'"></ng-include>

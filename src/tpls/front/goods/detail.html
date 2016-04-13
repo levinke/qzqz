@@ -1,0 +1,33 @@
+<html>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5b4624c65303f733b19903ae7921d468";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+  <link href="../css/base.css" rel="stylesheet" type="text/css">
+  <link href="../css/ssbj-b7.css" rel="stylesheet" type="text/css">
+  <title>亲子商店</title>
+</head>
+<body>
+	<div id="warp" style="max-width:640px;margin:0 auto;" ng-controller="goodsDetail_control">
+	  <img class="title" src="http://www.ysbiaoju.com/cgi-bin/download.pl?fid={{goods_detail.product_image}}">
+	  <div class="cont">
+	  	<label class="p1 c_blue">{{goods_detail.product_name}}</label>
+	  	<p>{{goods_detail.status | product_status}}</p>
+	  	<p>原价：{{goods_detail.price}}</p>
+	  	<p>现价：{{goods_detail.discount_price}}</p>
+	  	<p>交易量：{{goods_detail.purchase_count}}</p>
+	  	<p>上架时间：{{goods_detail.et | unixToLocal}}</p>
+	  	<p>产品类型:{{goods_detail.product_type | product_type}}</p>
+	  	<p><input class="lg_btn_sub" type="button" ng-click="return()" style="width: 50px;" value="返回"/></p>
+	  </div>
+	</div>
+</body>
+</html>

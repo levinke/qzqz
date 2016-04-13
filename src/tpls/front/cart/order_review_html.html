@@ -1,0 +1,176 @@
+<style type="text/css">
+.form-control {
+  display: block;
+  width: 99%;
+  height: 34px;
+  /*padding: 6px 12px;*/
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.form-control::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #999999;
+}
+.form-control::-webkit-input-placeholder {
+  color: #999999;
+}	
+</style>
+<!--引入微信支付
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script type="text/javascript">
+
+   // wx.config({
+	  //   debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+	  //   appId: '', // 必填，公众号的唯一标识
+	  //   timestamp: , // 必填，生成签名的时间戳
+	  //   nonceStr: '', // 必填，生成签名的随机串
+	  //   signature: '',// 必填，签名，见附录1
+	  //   jsApiList: [] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+   // });
+   
+   // wx.ready(function(){
+
+   //  // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+   // });
+
+   // wx.error(function(res){
+   //  // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+
+   // });
+
+   // wx.chooseWXPay({
+	  //   timestamp: 0, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+	  //   nonceStr: '', // 支付签名随机串，不长于 32 位
+	  //   package: '', // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+	  //   signType: '', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+	  //   paySign: '', // 支付签名
+	  //   success: function (res) {
+	  //       // 支付成功后的回调函数
+	        
+	  //   }
+   // });
+
+</script>
+-->
+
+
+<div ng-controller="orderReviewCtrl">
+
+	<div class="mod_hd">
+		<div class="modh_title">
+			<a class="modh_return" href="#/cart"><span class="modhr_img"></span></a><label>订单预览</label>
+		</div>
+	</div>
+
+	<div class="mod_bd" style="max-width:640px;margin:0 auto;" ng-init="order_review()">
+
+		<div class="mplace_address">
+			<a href="#/orderReview/address">
+				<span class="mplace_addr_flag"></span>
+				<div class="mpladd_floor1">
+					<p class="mpladd_name" style="width: 160px;">收货人：{{order.name}}</p>
+					<p class="mpladd_tel" style="width: 120px;">{{order.phone}}</p>
+				</div>
+				<div class="mpladd_floor2">
+					<p class="mpladd_text">收货地址：{{order.address}}</p>
+				</div>
+				<div class="mpladd_floor3">
+					<p class="tip">请确保收货地址真实有效</p>
+				</div>
+
+				<span class="modb_ret"></span>
+			</a>
+		</div>
+
+		<div class="mpladd_payway">
+		    <div class="mpladdpa_flo">
+				<p class="mpladdpa_type">货到付款</p><span class="mpladd_ispayway" id="cash" ng-click="choice('cash')"></span>
+			</div>
+
+			<!-- <div class="mpladdpa_flo bob">
+				<p class="mpladdpa_type">水票支付</p><span class="mpladd_ispayway payno" data-is="false"></span>
+			</div> -->
+
+			<div class="mpladdpa_flo bob">
+				<p class="mpladdpa_type">微信支付</p><span class="mpladd_ispayway payno" id="wechat" ng-click="choice('wechat')"></span>
+			</div>
+
+		</div>
+
+		<div class="mpladd_other" style="padding:8px;" >
+		  <div class="mpladd_flo" >
+			<input class="form-control" placeholder="点击添加备注"/>
+		  </div>		
+		</div>
+
+		<!-- <div class="mpladd_other">
+				<div class="mpladd_flo">
+					<p class="mpladdot_text">我的水票</p>
+					<p class="mpladdot_text2 fr">1张</p>
+				</div>
+		     </div> 
+		-->
+		<div class="mpladd_info">
+			<div class="mpladdi_total">
+				<p class="mpladdit_text">订单时间</p>
+				<p class="mpladdit_text2 fr" ng-bind="order.et | unixToLocal "></p>
+			</div>
+		</div>
+
+		<div class="mpladd_info" >
+			<div class="mpladdi_total">
+				<p class="mpladdit_text">订单总价</p>
+				<p class="mpladdit_text2 fr">合计:&nbsp;&nbsp;<span class="mpladdit_text3">¥{{order.amount|number:2}}</span></p>
+			</div>
+		</div>
+
+		<!-- <div style="padding:5px;">
+            <div ng-repeat="product in order.products" style="clear:both;">              
+              <span class="order_htime"><span style="float:left;">{{product.product_name}}</span> <span style="float:right;">{{product.count}}份</span> </span>
+            </div>
+          </div> -->
+        <div class="mpladd_info">
+			<div class="mpladdi_total"  ng-repeat="product in order.products">
+				<p class="mpladdit_text" >{{product.product_name}}</p>
+				<p class="mpladdit_text2 fr">{{product.count}}份</p>
+			</div>
+		</div>
+		<!-- <div class="mpladd_info">
+			<div class="mpladdi_total">
+				<p class="mpladdit_text">商品数</p>
+				<p class="mpladdit_text2 fr">数量:&nbsp;&nbsp;<span id="j-count" class="mpladdit_text3">{{product_size}}</span></p>
+			</div>
+		</div> -->
+
+		<div class="mpladd_pay">
+			<button class="mpladd_pay_btn" type="button" ng-click="newOrder($order)" >确认订单</button>
+		</div>
+
+		<!--<div class="mpladd_sp"><a href="javascript:;">查看水票使用规则</a></div>-->
+
+	</div>
+	<!-- 页脚导航-->
+  <div ng-include src="'front/footer/footer.html'"></div> 
+
+</div>

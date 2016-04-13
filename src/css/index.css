@@ -1,0 +1,564 @@
+@charset "utf-8";
+
+/* 首页全局   */
+
+* {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: 0;
+	-webkit-outline: 0;
+}
+
+img {
+	border: 0 none
+}
+
+i,
+em {
+	font-style: normal
+}
+
+ol,
+ul {
+	list-style: none
+}
+
+input,
+img {
+	vertical-align: middle
+}
+
+input,
+select {
+	font: inherit;
+	font-size: 100%
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+body {
+	height: 100%;
+	font-size: 14px;
+	font-family: "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", "sans-serif", "Varela Round", "sans-serif" !important;
+	color: #3e3e3e;
+	-webkit-text-size-adjust: 100%;
+	margin: 0 auto;
+}
+
+html {
+	font-size: 100px;
+}
+
+@media screen and (max-width:720px) {
+	html {
+		font-size: 94px;
+	}
+}
+
+@media screen and (max-width:640px) {
+	html {
+		font-size: 88px;
+	}
+}
+
+@media screen and (max-width:580px) {
+	html {
+		font-size: 80px;
+	}
+}
+
+@media screen and (max-width:540px) {
+	html {
+		font-size: 88px;
+	}
+}
+
+@media screen and (max-width:480px) {
+	html {
+		font-size: 76px;
+	}
+}
+
+@media screen and (max-width:414px) {
+	html {
+		font-size: 76px;
+	}
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 74px;
+	}
+}
+
+@media screen and (max-width:320px) {
+	.menu-con a img {
+		height: 4em !important;
+		margin-left: -12px;
+	}
+}
+
+@media screen and (max-width:213px) {
+	html {
+		font-size: 44px;
+	}
+}
+
+
+/*分割线*/
+
+.borderCJY1 {
+	border-bottom: 1px solid #e5e5e5;
+}
+
+
+/*banner*/
+
+.address_tab {
+	background: #FBB900;
+	height: 48px;
+	line-height: 48px;
+	font-size: 16px;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.address_tab a {
+	font-size: 13px;
+	color: #fff;
+	position: absolute;
+}
+
+.address_tab a.cityName {
+	left: 15px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.address_tab a.service_area {
+	right: 10px;
+}
+
+.arrow-left {
+	position: relative;
+	top: 16px;
+	left: 5px;
+	border-right: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	width: 8px;
+	height: 8px;
+	float: right;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.address_tab label {
+	font-family: "Microsoft YaHei";
+	font-weight: bold;
+}
+
+
+/* 图片滑动  */
+
+.swipe {
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+
+.swipe-wrap {
+	overflow: hidden;
+	position: relative;
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+	display: -ms-flexbox;
+}
+
+.swipe-wrap>div {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+.botton-box {
+	left: 41%;
+	right: 50%;
+	position: absolute;
+	bottom: 5px;
+	width: 100%;
+	height: 8px;
+}
+
+
+/*.botton-box{margin:0px auto;width:100%; position: absolute; bottom: 5px;}*/
+
+.botton-box span {
+	float: left;
+	height: 8px;
+	width: 8px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	display: block;
+	margin-right: 10px;
+	cursor: pointer;
+	background: #ffffff;
+	-webkit-opacity: 0.6;
+	opacity: 0.6;
+}
+
+.botton-box span.on {
+	-webkit-opacity: 1.0;
+	opacity: 1.0;
+	background: #fbb900;
+}
+
+
+/* 导航菜单 */
+
+.menu-con {
+	background: #f5f5f5;
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+	display: -ms-flexbox;
+}
+
+.menu-con a {
+	background: #fff;
+	display: block;
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	padding: 1em 0;
+	text-align: center;
+}
+
+.menu-con-list {
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+	display: -ms-flexbox;
+}
+
+.menu-con-list a:last-child {
+	border-left: 1px solid #e5e5e5;
+}
+
+.menu-con a:first-child {
+	border-right: 1px solid #e5e5e5;
+}
+
+.menu-con-list a:first-child {
+	border-right: 1px solid #e5e5e5;
+}
+
+.menu-con-list a {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	display: block;
+	background: #fff;
+	text-align: center;
+	padding: 1.4em 0;
+}
+
+.space_title {
+	line-height: 50px;
+}
+
+.chongzhi_tip {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	background: rgb(225, 37, 90);
+	color: #fff;
+	font-size: 12px;
+	padding: 0 4px;
+	border-radius: 4px;
+}
+
+.menu-con-list {
+	float: left;
+	width: 100%;
+	/*margin-bottom: 10px;*/
+}
+
+.menu-con-list a img {
+	height: 4.6em;
+}
+
+.menu-con a img {
+	/*float: left;*/
+	/*margin: 16px 10px 16px 10px;*/
+	height: 4.8em;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+
+.menu-con a div {
+	color: #888;
+	/*font-size: 14px;*/
+}
+
+@media screen and (max-width:320px) {
+	body {
+		zoom: 0.9 !important;
+	}
+}
+
+@media screen and (max-height:480px) {
+	body {
+		padding-bottom: 40px !important;
+	}
+}
+
+@-webkit-keyframes dot {
+	0% {
+		width: 0;
+		margin-right: 1.5em;
+	}
+	33% {
+		width: .5em;
+		margin-right: 1em;
+	}
+	66% {
+		width: 1em;
+		margin-right: .5em;
+	}
+	100% {
+		width: 1.5em;
+		margin-right: 0;
+	}
+}
+
+@keyframes dot {
+	0% {
+		width: 0;
+		margin-right: 1.5em;
+	}
+	33% {
+		width: .5em;
+		margin-right: 1em;
+	}
+	66% {
+		width: 1em;
+		margin-right: .5em;
+	}
+	100% {
+		width: 1.5em;
+		margin-right: 0;
+	}
+}
+
+.nav_text {
+	font-size: 18px;
+	color: gray;
+	margin-left: 5px;
+}
+
+.nav_text2 {
+	font-size: 14px;
+	color: gray;
+}
+
+
+/*split-space*/
+
+.s-space {
+	clear: both;
+	width: 100%;
+	height: 10px;
+}
+
+
+/*其他菜单按钮*/
+
+.menu-other-list {
+	float: left;
+	width: 100%;
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+	display: -ms-flexbox;
+}
+
+.menu-other-list a {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	text-align: center;
+	display: block;
+	background: #fff;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-right: 1px solid #e5e5e5;
+}
+
+.menu-other-list a span {
+	color: gray;
+	padding-left: 0.3em;
+}
+
+.menu-other-list img {
+	height: 2em;
+}
+
+
+/*=定位=*/
+
+.wrap_city {
+	background: #fff;
+	color: rgb(62, 62, 62);
+}
+
+.wcityl_title {
+	line-height: 36px;
+	background-color: #f6f5f5;
+	padding-left: 12px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.wcityl_text {
+	line-height: 36px;
+	padding-left: 15px;
+}
+
+.wrap_city dd {
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.wrap_city a {
+	display: block;
+}
+
+.row-right {
+	border-right: 2px solid #cccccc;
+	border-bottom: 2px solid #cccccc;
+	float: right;
+	width: 9px;
+	height: 9px;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	margin-top: 13px;
+	margin-right: 10px;
+}
+
+.wcity_tip {
+	text-align: center;
+	font-size: 10px;
+	color: #aaa9a9;
+}
+
+.serve {
+	width: 90%;
+	height: 170px;
+	position: absolute;
+	top: 10px;
+	border: solid 1px #F1F2F6;
+	left: 5%;
+	background: #FFFFFF;
+}
+
+.serve .serverTitle {
+	font-weight: bold;
+	position: relative;
+	display: block;
+	height: 40px;
+	padding: 0;
+	line-height: 40px;
+	width: 100%;
+	background: #f1f2f6;
+	font-size: 16px;
+	margin: 0;
+	font-family: arial;
+}
+
+.baoliao_more {
+	line-height: 40px;
+	text-align: center;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #EEEEEE;
+	background: #FFFFFF;
+	float: left;
+	width: 100%;
+}
+
+.baoliao_more a {
+	line-height: 40px;
+	height: 40px;
+	width: 100%;
+	color: #666666;
+	text-decoration: none;
+	float: left;
+	font-size: 12px;
+}
+
+.mprod_list label {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: gray;
+	font-family: arial;
+	height: 45px;
+	width: 24%;
+	line-height: 45px;
+	font-size: 16px;
+}
+
+.mprod_list label:hover {
+	color: #00bb9c;
+	cursor: pointer;
+}
+
+input:checked + label {
+	color: #00bb9c;
+	border-bottom: 1px solid #00bb9c;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+	display: block;
+}
+
+.mprod_list section {
+	display: none;
+}
+
+.share_img {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+	background-size: contain;
+}
+.share_img img {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 72%;
+	height: 45%;
+	background-size: contain;
+}
